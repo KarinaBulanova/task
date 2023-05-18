@@ -19,14 +19,14 @@ public class TodosTest {
                 "Во вторник после обеда"
         );
 
-        TodosManager todosManager = new TodosManager();
+        Todos todos = new Todos();
 
-        todosManager.add(simpleTask);
-        todosManager.add(epic);
-        todosManager.add(meeting);
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
 
         Task[] expected = {simpleTask, epic, meeting};
-        Task[] actual = todosManager.findAll();
+        Task[] actual = todos.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -44,14 +44,14 @@ public class TodosTest {
                 "Во вторник после обеда"
         );
 
-        TodosManager todosManager = new TodosManager();
+        Todos todos = new Todos();
 
-        todosManager.add(simpleTask);
-        todosManager.add(epic);
-        todosManager.add(meeting);
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
 
         Task[] expected = {simpleTask, epic};
-        Task[] actual = todosManager.search("Хлеб");
+        Task[] actual = todos.search("Хлеб");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -69,14 +69,14 @@ public class TodosTest {
                 "Во вторник после обеда"
         );
 
-        TodosManager todosManager = new TodosManager();
+        Todos todos = new Todos();
 
-        todosManager.add(simpleTask);
-        todosManager.add(epic);
-        todosManager.add(meeting);
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
 
         Task[] expected = {};
-        Task[] actual = todosManager.search("колбаса");
+        Task[] actual = todos.search("колбаса");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -94,14 +94,14 @@ public class TodosTest {
                 "Во вторник после обеда"
         );
 
-        TodosManager todosManager = new TodosManager();
+        Todos todos = new Todos();
 
-        todosManager.add(simpleTask);
-        todosManager.add(epic);
-        todosManager.add(meeting);
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
 
         Task[] expected = {meeting};
-        Task[] actual = todosManager.search("Приложение");
+        Task[] actual = todos.search("Приложение");
         Assertions.assertArrayEquals(expected, actual);
     }
 }
